@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Редирект в зависимости от операционной системы</title>
+</head>
+<body>
+  <script>
+    // Определение операционной системы пользователя
+    var userAgent = navigator.userAgent.toLowerCase();
+
+    if (userAgent.includes("android")) {
+      // Если пользователь использует Android, перенаправляем на сайт для Android
+      window.location.href = "https://play.google.com/store/apps/details?id=org.outline.android.client";
+    } else if (userAgent.includes("iphone") || userAgent.includes("ipad")) {
+      // Если пользователь использует iOS (iPhone или iPad), перенаправляем на сайт для Apple
+      window.location.href = "https://itunes.apple.com/us/app/outline-app/id1356177741";
+    } else if (userAgent.includes("mac")) {
+      // Если пользователь использует macOS, перенаправляем на сайт для macOS
+      window.location.href = "https://itunes.apple.com/us/app/outline-app/id1356178125";
+    } else if (userAgent.includes("linux")) {
+      // Если пользователь использует Linux, перенаправляем на сайт для Linux
+      window.location.href = "https://s3.amazonaws.com/outline-releases/client/linux/stable/Outline-Client.AppImage";
+    } else if (userAgent.includes("win")) {
+      // Если пользователь использует Windows, перенаправляем на сайт для Windows
+      window.location.href = "https://s3.amazonaws.com/outline-releases/client/windows/stable/Outline-Client.exe";
+    } else {
+      // Если операционная система не определена, можно выполнить редирект на общий сайт
+      window.location.href = "https://общий-сайт.com";
+    }
+  </script>
+</body>
+</html>
